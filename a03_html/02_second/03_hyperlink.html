@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--
+하이퍼링크 만들기
+a 태그의 href 속성을 이용하여 다른 페이지를 호출하여 이동하는 것을 말한다.
+하이퍼링크(hyperlink)란?
+ 1) 다른 html 페이지의 연결 고리
+같은 웹 사이트의 다른 html 페이지 호출
+다른 웹 사이트의 html 페이지 호출
+
+    2) 하이퍼링크는 텍스트나 이미지로 작성한다.
+    3) anchor
+    해당 하이퍼링크를 따라(href) 다른 웹 페이지를 방문하는 것을 말한다.
+기본 형식
+ 텍스트 또는 이미지
+ 1) href : 이동할 html 페이지의 url 혹은 html 페이지 내 앵커 이름
+ 2) target : 링크에 연결된 html 페이지가 출력되는 윈도우/프레임 이름 지정
+
+-->
+    <h2>현재 서버에 있는 자원을 호출하는 연결</h2>
+    <a href="01_table.html">테이블 연습 페이지로 이동</a><br>
+    <a href="02_table_cellSpan.html">
+        <img src="img01.jpg" width="100" height="50">
+    </a>
+    <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이지 이동 통합 예제</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .page-box {
+            border: 2px solid #333;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #fafafa;
+            border-radius: 8px;
+        }
+        .admin-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .admin-img-btn {
+            cursor: pointer;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>페이지 이동 예제 (통합본)</h1>
+
+    <!-- 04_login.html 영역 -->
+    <div class="page-box" id="login-section">
+        <h2>로그인 페이지 (04_login.html)</h2>
+        <p>이동할 페이지를 선택하세요:</p>
+        <ul>
+            <!-- 메인 페이지로 이동 -->
+            <li><a href="#main-section">메인 페이지로 이동 (텍스트 클릭)</a></li>
+            <!-- 관리자 페이지로 이동 (이미지 클릭) -->
+            <li>
+                <a href="#admin-section">
+                    <img src="https://via.placeholder.com/150x50/007bff/ffffff?text=Admin+Page" alt="관리자 페이지 이동" class="admin-img-btn">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <!-- 05_main.html 영역 -->
+    <div class="page-box" id="main-section">
+        <h2>메인페이지 (05_main.html)</h2>
+        <p>이동할 페이지를 선택하세요:</p>
+        <ul>
+            <!-- 로그인 페이지로 이동 -->
+            <li><a href="#login-section">로그인 페이지로 이동 (텍스트 클릭)</a></li>
+            <!-- 관리자 페이지로 이동 (이미지 클릭) -->
+            <li>
+                <a href="#admin-section">
+                    <img src="https://via.placeholder.com/150x50/28a745/ffffff?text=Admin+Page" alt="관리자 페이지 이동" class="admin-img-btn">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <!-- 06_admin.html 영역 -->
+    <div class="page-box" id="admin-section">
+        <h2>관리자 페이지 (06_admin.html)</h2>
+        <p>이동할 페이지를 선택하세요:</p>
+        <ul>
+            <!-- 로그인 페이지로 이동 -->
+            <li><a href="#login-section">로그인 페이지로 이동 (텍스트 클릭)</a></li>
+            <!-- 메인 페이지로 이동 -->
+            <li><a href="#main-section">메인 페이지로 이동 (텍스트 클릭)</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
+</body>
+</html>
