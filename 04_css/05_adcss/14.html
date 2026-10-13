@@ -1,0 +1,343 @@
+<!DOCTYPE html>/*copoilt 확인용 페이지입니다*/
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>기본 화면</title>
+    <style>
+      :root {
+        --bg: #f5f7ff;
+        --panel: #ffffff;
+        --primary: #4f46e5;
+        --primary-dark: #3730a3;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --line: #e5e7eb;
+        --shadow: 0 18px 40px rgba(79, 70, 229, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 100%);
+        color: var(--text);
+      }
+
+      .container {
+        width: min(1100px, calc(100% - 40px));
+        margin: 40px auto;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(229, 231, 235, 0.8);
+        border-radius: 18px;
+        padding: 18px 26px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+      }
+
+      .logo {
+        font-size: 1.3rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        color: var(--primary-dark);
+      }
+
+      nav {
+        display: flex;
+        gap: 30px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      .login-btn {
+        padding: 10px 18px;
+        border: none;
+        border-radius: 999px;
+        background: var(--primary);
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 30px;
+        margin-top: 38px;
+        align-items: center;
+      }
+
+      .hero-text {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        padding: 42px 36px;
+        box-shadow: var(--shadow);
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin: 0 0 14px;
+        font-size: 0.74rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        color: var(--primary);
+        background: rgba(79, 70, 229, 0.08);
+        padding: 8px 12px;
+        border-radius: 999px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.3rem, 4vw, 4rem);
+        line-height: 1.1;
+      }
+
+      .hero-text p {
+        color: var(--muted);
+        font-size: 1.02rem;
+        line-height: 1.7;
+        margin: 18px 0 28px;
+      }
+
+      .actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .primary-btn,
+      .secondary-btn {
+        display: inline-block;
+        text-decoration: none;
+        padding: 15px 22px;
+        border-radius: 12px;
+        font-weight: 700;
+      }
+
+      .primary-btn {
+        background: var(--primary);
+        color: white;
+      }
+
+      .secondary-btn {
+        background: transparent;
+        color: var(--text);
+        border: 1px solid var(--line);
+      }
+
+      .hero-card {
+        background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        border-radius: 26px;
+        padding: 30px;
+        min-height: 340px;
+        color: white;
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-card::before,
+      .hero-card::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .hero-card::before {
+        width: 180px;
+        height: 180px;
+        top: -40px;
+        right: -20px;
+      }
+
+      .hero-card::after {
+        width: 240px;
+        height: 240px;
+        bottom: -80px;
+        left: -30px;
+      }
+
+      .mini-card {
+        position: relative;
+        z-index: 1;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 18px;
+        padding: 18px;
+        margin-top: 40px;
+      }
+
+      .mini-card h3 {
+        margin: 0 0 8px;
+        font-size: 1rem;
+      }
+
+      .stats {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 18px;
+      }
+
+      .stat-box {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 12px 14px;
+        text-align: center;
+        flex: 1;
+        margin-right: 10px;
+      }
+
+      .stat-box:last-child {
+        margin-right: 0;
+      }
+
+      .stat-box strong {
+        display: block;
+        font-size: 1.4rem;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 36px;
+      }
+
+      .feature {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 26px 22px;
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.03);
+      }
+
+      .icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        background: rgba(79, 70, 229, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        margin-bottom: 14px;
+      }
+
+      .feature h3 {
+        margin: 0 0 10px;
+        font-size: 1.1rem;
+      }
+
+      .feature p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      @media (max-width: 800px) {
+        .topbar {
+          flex-wrap: wrap;
+          gap: 18px;
+          justify-content: center;
+        }
+
+        nav {
+          order: 3;
+          width: 100%;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .features {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="topbar">
+        <div class="logo">LOGO</div>
+        <nav>
+          <a href="#">홈</a>
+          <a href="#">서비스</a>
+          <a href="#">소개</a>
+          <a href="#">문의</a>
+        </nav>
+        <button class="login-btn">로그인</button>
+      </header>
+
+      <main class="hero">
+        <section class="hero-text">
+          <p class="eyebrow">WELCOME</p>
+          <h1>기본적인 웹 페이지</h1>
+          <p>
+            깔끔한 레이아웃과 사용자 친화적인 디자인으로 구성된 기본 화면입니다.
+            간단하게 시작하고, 필요한 내용을 쉽게 추가할 수 있습니다.
+          </p>
+          <div class="actions">
+            <a href="#" class="primary-btn">시작하기</a>
+            <a href="#" class="secondary-btn">자세히 보기</a>
+          </div>
+        </section>
+
+        <aside class="hero-card">
+          <div class="mini-card">
+            <h3>프로젝트 진행률</h3>
+            <strong>82%</strong>
+            <div class="stats">
+              <div class="stat-box">
+                <strong>12k</strong>
+                <span>회원</span>
+              </div>
+              <div class="stat-box">
+                <strong>4.8</strong>
+                <span>평점</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </main>
+
+      <section class="features">
+        <article class="feature">
+          <div class="icon">★</div>
+          <h3>간단한 구조</h3>
+          <p>기본 HTML 구조를 바탕으로 빠르게 페이지를 구성할 수 있습니다.</p>
+        </article>
+
+        <article class="feature">
+          <div class="icon">◎</div>
+          <h3>반응형 디자인</h3>
+          <p>화면 크기에 따라 자동으로 배치가 조정되어 모바일에서도 편하게 보입니다.</p>
+        </article>
+
+        <article class="feature">
+          <div class="icon">▣</div>
+          <h3>확장 가능</h3>
+          <p>필요한 섹션과 기능을 추가하여 더 풍부한 웹 페이지로 확장할 수 있습니다.</p>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>

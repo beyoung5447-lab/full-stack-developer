@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Overflow 속성 예제</title>
+  <style>
+    body {
+      font-family: 'Malgun Gothic', sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    h2 {
+      margin-top: 30px;
+      font-size: 1.2rem;
+    }
+
+    /* 공통 박스 스타일 */
+    .box {
+      width: 280px;
+      height: 120px;
+      border: 2px solid #333;
+      padding: 10px;
+      background-color: #fff;
+    }
+
+    /* 1. 선물상자 숨기기 */
+    .gift-box {
+      overflow: hidden;
+    }
+
+    /* 2. 고대문서 스크롤하기 */
+    .ancient-scroll {
+      overflow: scroll;
+    }
+
+    /* 3. 선글라스 광고 박스 */
+    .sunglasses-ad {
+      overflow: visible;
+    }
+
+    /* 4. 책 페이지 넘기기 */
+    .book-page {
+      overflow: auto;
+    }
+
+    /* 박스 크기를 의도적으로 넘치게 만드는 내부 콘텐츠 */
+    .content {
+      width: 450px;
+      height: 200px;
+      background-color: rgba(0, 123, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>1. 선물상자 숨기기 (overflow: hidden)</h2>
+  <div class="box gift-box">
+    <div class="content">
+      선물상자가 너무 많아 크기를 초과했지만, 넘친 내용이 깔끔하게 잘려서 보이지 않습니다! 
+    </div>
+  </div>
+
+  <h2>2. 고대문서 스크롤하기 (overflow: scroll)</h2>
+  <div class="box ancient-scroll">
+    <div class="content">
+      고대문서의 방대한 기록입니다. 항상 스크롤바가 표시되어 언제든 전체 내용을 읽을 수 있습니다. 
+    </div>
+  </div>
+
+  <h2> 3. 선글라스 광고 박스 (overflow: visible)</h2>
+  <div class="box sunglasses-ad">
+    <div class="content" style="background-color: rgba(255, 193, 7, 0.3);">
+      광고 내용이 박스 밖으로 튀어나와 시선을 강탈하는 입체적인 효과를 줍니다! 
+    </div>
+  </div>
+
+  <h2> 4. 책 페이지 넘기기 (overflow: auto)</h2>
+  <div class="box book-page">
+    <div class="content">
+      내용이 적을 때는 깔끔하게 유지되고, 지정된 크기를 넘칠 때만 자동으로 스크롤바가 생성됩니다. 
+    </div>
+  </div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Shop - 실전 쇼핑몰 UI</title>
+    <style>
+        /* [1] 기본 초기화 (Reset CSS) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+
+        /* [2] 헤더 영역 (Flexbox 활용) */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+        .nav-menu li a:hover {
+            color: #007bff;
+        }
+        .header-icons span {
+            margin-left: 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* [3] 메인 프로모션 배너 */
+        .hero-banner {
+            height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80') center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+        .hero-text h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .btn-shop {
+            padding: 12px 30px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-shop:hover {
+            background-color: #0056b3;
+        }
+
+        /* [4] 상품 목록 영역 (CSS Grid 활용) */
+        .product-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .product-title {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e53935;
+            margin-bottom: 15px;
+        }
+        .btn-cart {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn-cart:hover {
+            background-color: #555;
+        }
+
+        /* [5] 푸터 영역 */
+        footer {
+            background-color: #222;
+            color: #ccc;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        /* [6] 반응형 웹 (Media Query) */
+        @media screen and (max-width: 768px) {
+            .nav-menu {
+                display: none; /* 모바일에서는 기본 메뉴 숨김 (실무에서는 햄버거 메뉴로 대체) */
+            }
+            .hero-banner {
+                height: 300px;
+            }
+            .hero-text h1 {
+                font-size: 28px;
+            }
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr); /* 모바일에서는 2열 배치 */
+                gap: 15px;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr; /* 아주 작은 화면에서는 1열 배치 */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 (GNB) -->
+    <header>
+        <div class="header-container">
+            <div class="logo">MODERN SHOP</div>
+            <ul class="nav-menu">
+                <li><a href="#">NEW</a></li>
+                <li><a href="#">BEST</a></li>
+                <li><a href="#">OUTER</a></li>
+                <li><a href="#">TOP/BOTTOM</a></li>
+            </ul>
+            <div class="header-icons">
+                <span>🔍 검색</span>
+                <span>🛒 장바구니 (0)</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 히어로 배너 -->
+        <section class="hero-banner">
+            <div class="hero-text">
+                <h1>2026 F/W 시즌 오프</h1>
+                <p>최대 50% 할인된 가격으로 만나보세요.</p>
+                <button class="btn-shop">지금 쇼핑하기</button>
+            </div>
+        </section>
+
+        <!-- 상품 리스트 영역 -->
+        <section class="product-section">
+            <h2 class="section-title">Best Sellers</h2>
+            
+            <div class="product-grid">
+                <!-- 상품 1 -->
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80" alt="베이직 코트" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-title">클래식 베이직 롱 코트</h3>
+                        <p class="product-price">129,000원</p>
+                        <button class="btn-cart">장바구니 담기</button>
+                    </div>
+                </article>
+
+                <!-- 상품 2 -->
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=400&q=80" alt="데님 팬츠" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-title">빈티지 와이드 데님 팬츠</h3>
+                        <p class="product-price">49,000원</p>
+                        <button class="btn-cart">장바구니 담기</button>
+                    </div>
+                </article>
+
+                <!-- 상품 3 -->
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?auto=format&fit=crop&w=400&q=80" alt="니트 스웨터" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-title">소프트 케이블 니트</h3>
+                        <p class="product-price">35,000원</p>
+                        <button class="btn-cart">장바구니 담기</button>
+                    </div>
+                </article>
+
+                <!-- 상품 4 -->
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=400&q=80" alt="스니커즈" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-title">데일리 화이트 스니커즈</h3>
+                        <p class="product-price">59,000원</p>
+                        <button class="btn-cart">장바구니 담기</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer>
+        <p>&copy; 2026 MODERN SHOP. All rights reserved.</p>
+        <p>상호명: 모던샵 | 대표자: 홍길동 | 고객센터: 1588-0000</p>
+    </footer>
+
+</body>
+</html>

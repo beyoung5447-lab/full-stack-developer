@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/*
+가상 클래스(Pseudo-class) 및 가상 요소 선택자
+어떤 조건이나 상황에서 스타일을 적용하도록 만든 선택자
+1)  40개 이상의 많은 가상 클래스 선택자가 있다.
+ex) a:visited { color: green; }
+방문한 a 태그의 링크 텍스트 색상을 green으로 출력
+ex) li:hover { background-color: yellowgreen; }
+li 요소에 마우스 커서를 올렸을 때 배경색 변경
+
+가상 클래스의 종류와 내용
+1) 마우스
+:hover : 마우스 커서를 위치시켰을 때 스타일 적용
+:active : 마우스를 누르고 있는 동안 스타일 적용
+2) 폼 요소
+:focus : 폼 요소에 키보드나 마우스 클릭으로 포커스가 위치했을 때 스타일 적용
+3) 링크
+:link : 방문하지 않은 링크에 스타일 적용
+:visited : 방문한 링크에 스타일 적용
+4) 블록 (※ 가상 요소에 해당)
+::first-letter : p, div 등과 같은 블록 태그의 첫 글자에 스타일 적용 (span 같은 인라인 태그에는 
+ 적용되지 않음)
+::first-line : p, div 등과 같은 블록 태그의 첫 줄에 스타일 적용
+5) 구조
+:nth-child(even) : 짝수 번째 모든 자식 태그에 스타일 적용
+:nth-child(odd) : 홀수 번째 모든 자식 태그에 스타일 적용
+:nth-child(n) : n번째 모든 자식 태그에 스타일 적용
+h3를 안녕하세요라고 레이블 5개를 만들고 커서에 위치를 시켰을때 바탕 색상이 
+pink로 변하게 선언해보세요
+
+
+*/
+</style> 
+</head>
+</body>
+   tr:hover{background-color: yellowgreen;}
+    </style>
+</head>
+<body>
+    <!-- :hover : 마우스 커서를 위치시키면 처리되는 내용을 말합니다.-->
+    <table width="50%" border>
+        <tr><th>번호</th><th>제목</th></tr>
+        <tr><td>1</td><td>첫번째 게시물</td></tr>
+        <tr><td>2</td><td>게시물</td></tr>
+        <tr><td>3</td><td>게시물</td></tr>
+        <tr><td>4</td><td>게시물</td></tr>
+        <tr><td>5</td><td>게시물</td></tr>
+    </table>
+
+    <style>
+    /* h3 요소에 마우스를 올렸을 때(hover) 배경색 변경 */
+    h3:hover {
+      background-color: pink;
+    }
+
+    /* 스타일 가독성을 위한 기본 설정 (선택 사항) */
+    h3 {
+      padding: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease; /* 배경색 전환을 부드럽게 연출 */
+    }
+  </style>
+</head>
+<body>
+
+  <h3>안녕하세요</h3>
+  <h3>안녕하세요</h3>
+  <h3>안녕하세요</h3>
+  <h3>안녕하세요</h3>
+  <h3>안녕하세요</h3>
+
+</body>
+</html>
+
+
+</body>
+</html>
+

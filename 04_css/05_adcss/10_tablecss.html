@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 정보 테이블</title>
+    <style>
+        /* 테이블 전체 스타일 설정 */
+        table {
+            width: 500px;
+            border-collapse: collapse; /* 테두리가 겹치도록 설정하여 1픽셀 선 구현 */
+            margin: 20px auto;
+            font-family: 'Malgun Gothic', sans-serif;
+        }
+
+        /* 테이블 헤더 및 셀 테두리 1픽셀 적용 */
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 12px;
+        }
+
+        /* 헤더 배경색 및 글자 스타일 */
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+
+        /* 정렬 조건 설정 */
+        .text-center {
+            text-align: center; /* 회원아이디, 회원명 중앙 정렬 */
+        }
+
+        .text-right {
+            text-align: right; /* 포인트 오른쪽 정렬 */
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>회원아이디</th>
+                <th>회원명</th>
+                <th>포인트</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">hong123</td>
+                <td class="text-center">홍길동</td>
+                <td class="text-right">1,500원</td>
+            </tr>
+            <tr>
+                <td class="text-center">kim456</td>
+                <td class="text-center">김철수</td>
+                <td class="text-right">3,250원</td>
+            </tr>
+            <tr>
+                <td class="text-center">lee789</td>
+                <td class="text-center">이영희</td>
+                <td class="text-right">10,000원</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

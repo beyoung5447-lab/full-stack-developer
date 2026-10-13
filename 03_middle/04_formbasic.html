@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로필 입력</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>프로필 정보 입력</h2>
+    <form action="http://127.0.0.1:5000/profile" method="get">
+        <div class="form-group">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" value="홍길동" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">이메일</label>
+            <input type="email" id="email" name="email" value="test@test.com" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">전화번호</label>
+            <input type="text" id="phone" name="phone" value="010-1234-5678" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="myIntro">나의 소개</label>
+            <textarea id="myIntro" name="myIntro" rows="4">안녕하세요</textarea>
+        </div>
+        
+        <button type="submit">프로필 전송</button>
+    </form>
+
+</body>
+</html>

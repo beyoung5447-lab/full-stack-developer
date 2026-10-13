@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS 작성 
+박스의 배치: position
+노멀 플로우 (Normal Flow)
+1) 웹 페이지에 나타난 순서대로 HTML 태그가 배치되는 방식을 말합니다.
+2) position 프로퍼티를 이용하면 이 노멀 플로우를 무시하고 배치할 수 있습니다.
+
+position 프로퍼티를 이용한 배치 방법
+1) 정적 배치 - position: static (기본값)
+2) 상대 배치 - position: relative
+3) 절대 배치 - position: absolute
+4) 고정 배치 - position: fixed
+5) 유동 배치 - float: left, float: right
+
+position 프로퍼티를 사용할 때 태그의 위치와 크기
+1) top, bottom, left, right, width, height 프로퍼티로 지정합니다.
+2) 이 프로퍼티들은 배치 방법에 따라 다르게 사용됩니다.
+
+상대 배치: position: relative
+개요
+노멀 플로우의 기본 위치에서 left, top, bottom, right 프로퍼티의 값만큼 이동하여 배치하는 상대 위치 방식입니다.
+예시)
+position: relative;
+right: 20px;
+bottom: 20px;
+
+position: relative;
+left: 20px;
+top: 20px;*/
+
+        div {
+            display: inline-block; 
+            height: 50px; 
+            width: 50px;
+            border: 1px solid lightgray; 
+            color: white;
+            background: red;
+            text-align: center; 
+            line-height: 50px;
+        }
+        
+        .up:hover {
+            position: relative;
+            left: 20px; 
+            top: -20px; 
+            background-color: green;
+        }
+        
+        .down:hover {
+            position: relative;
+            left: 20px; 
+            top: 20px; 
+            background-color: blue;
+        }
+
+        /* bolloon 클래스 선언 */
+        .bolloon {
+            display: inline-block;
+            height: 50px;
+            width: 50px;
+            border: 1px solid lightgray;
+            color: white;
+            background: orange;
+            text-align: center;
+            line-height: 50px;
+            position: relative;
+        }
+
+        /* bolloon 호버 시 밑에서 위로 80px 이동 */
+        .bolloon:hover {
+            top: -80px;
+            background-color: purple;
+        }
+    </style>
+    <script>
+        /* Head JS 작성 (미리 불러올 스크립트) */
+    </script>
+</head>
+<body>
+    <!-- HTML 작성 -->
+    <h2>상대적 배치</h2>
+    <hr>
+    <div class="up">T</div>
+    <div class="down">T</div>
+    <div class="up">T</div>
+    <div class="down">T</div>
+    <div class="up">T</div>
+    <div class="down">T</div>
+
+    <br><br>
+    <h2>Bolloon 클래스 테스트</h2>
+    <div class="bolloon">B</div>
+    <div class="bolloon">B</div>
+    
+    <script>
+        /* Body End JS 작성 (마지막에 실행될 스크립트) */
+    </script>
+</body>
+</html>

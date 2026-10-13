@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--
+콤보박스 select 처리하기
+특정한 form요소에서 선택을 하고, 전송시 해당 선택에 연결된 데이터를 서버에 
+전송 처리하는 것을 말한다.
+기본 형식<select name="요청key"><option>요청값선택1</option><option>요청값선택2</option><option>요청값선택3</option></select>
+화면에 보이는 것과 요청전송되는 데이터가 다른 경우<select name="요청key"><option value="요청값1">레이블1</option>
+     <option value="요청값2">레이블2</option>
+     <option value="요청값3">레이블3</option>
+ </select>
+속성
+ 1) select
+     name="요청key"
+     multiple : 선택을 다중으로 할 때.
+     size="숫자" : 선택을 보이게 할 때..
+ 2) option
+     selected : 초기에 선택할 내용을 선택되어지게 하는 옵션
+     기본 선택값이 제일 상위에 있는 것을 보이게 된다 그럼  1번째 이후 내용을
+     기본 선택으로 할 때는 이 옵션을 처리한다.
+
+-->
+<from>
+    나라선택
+    <select name="country">
+        <option>한국</option>
+        <option>일본</option>
+        <option>미국</option>
+    </select><br>
+    <from>
+    <h3>과일선택</h3>
+    <select name="fruit">
+        <option value ="apple">사과</option>
+        <option value ="orange">오렌지</option>
+        <option value ="kiwi">키위</option>
+    </select><br>
+    <h3>자동차선택(초기선택을 2번째 이하)</h3>
+    <select>
+        <option>bmw</option>
+        <option>벤츠</option>
+        <option selected>아우디</option>
+        <option>현대</option>
+    </select><br>
+</select><br>
+<h3>취미선택(다중선택/출력2개이상)</h3>
+<select name ="hobby" size="3" multiple >
+    <option>독서</option>
+    <option>운동</option>
+    <option>음악</option>
+    <option>여행</option>
+    <!--007 비밀 요원 장비 요청서
+당신은 국가의 중대한 임무를 띠고 파견되는 비밀 요원입니다. 임무지침 본부에 장비를 요청하는 폼을 만들어보세요.
+
+기본 선택 (<select>): 파견될 국가를 선택하세요. (예: 영국, 미국, 프랑스, 스위스)
+
+value/레이블 분리 (value="..."): 위장할 신분을 선택하세요. 
+본부 서버에는 영어 코드네임으로 전송되어야 합니다. (예: 화면에는 '회사원', '대학생', '의사' / 서버 전송값은 'worker', 'student', 'doctor')
+
+초기 선택 (selected): 현지에서 사용할 이동 수단을 선택하세요. 
+요원들이 가장 선호하는 '방탄 스포츠카'가 미리 선택되어 있도록 하세요. (예: 일반 택시, 자전거, 방탄 스포츠카, 헬리콥터)
+
+다중 선택 (multiple, size="3"): 챙겨갈 특수 비밀 장비를 여러 개 고르세요. 
+리스트 창에는 3개가 한 번에 보이도록 설정하세요. (예: 레이저 시계, 투명 우산, 수면 가스, 만능 해킹 USB)-->
+</select>
+    <input type="submit" value="선택 완료"/>
+</from>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MI6 비밀 요원 임무 및 장비 요청서</title>
+  <style>
+    :root {
+      --bg-color: #0d1117;
+      --card-bg: #161b22;
+      --border-color: #30363d;
+      --accent-color: #00ff66;
+      --text-color: #c9d1d9;
+      --text-heading: #f0f6fc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', Courier, monospace, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    .form-container {
+      background-color: var(--card-bg);
+      border: 1px solid var(--accent-color);
+      border-radius: 8px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 550px;
+      box-shadow: 0 0 20px rgba(0, 255, 102, 0.15);
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #da3633;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-header h1 {
+      color: var(--text-heading);
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-header p {
+      color: var(--accent-color);
+      font-size: 0.85rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      color: var(--text-heading);
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .help-text {
+      font-size: 0.8rem;
+      color: #8b949e;
+      margin-bottom: 0.5rem;
+    }
+
+    /* select 공통 스타일 */
+    select {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #0d1117;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      color: var(--accent-color);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    select:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 8px rgba(0, 255, 102, 0.3);
+    }
+
+    /* 다중 선택 select 전용 스타일 */
+    select[multiple] {
+      padding: 0.5rem;
+    }
+
+    select[multiple] option {
+      padding: 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 2px;
+    }
+
+    select[multiple] option:checked {
+      background-color: rgba(0, 255, 102, 0.2);
+      color: var(--accent-color);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      background-color: transparent;
+      border: 1px solid var(--accent-color);
+      color: var(--accent-color);
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--accent-color);
+      color: #000;
+      box-shadow: 0 0 15px rgba(0, 255, 102, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <header class="form-header">
+      <span class="badge">TOP SECRET</span>
+      <h1>AGENT 007 EQUIPMENT REQUEST</h1>
+      <p>[ 본부 서버 보안 연결 완료 ]</p>
+    </header>
+
+    <form action="/api/mission-request" method="POST">
+      
+      <!-- 1. 기본 선택 (<select>) -->
+      <div class="form-group">
+        <label for="country">1. 파견될 국가 선택</label>
+        <select id="country" name="country">
+          <option value="uk">영국</option>
+          <option value="usa">미국</option>
+          <option value="france">프랑스</option>
+          <option value="swiss">스위스</option>
+        </select>
+      </div>
+
+      <!-- 2. value/레이블 분리 (value="...") -->
+      <div class="form-group">
+        <label for="cover-identity">2. 현지 위장 신분 선택</label>
+        <p class="help-text">* 서버에는 암호화된 코드네임(영어)으로 전송됩니다.</p>
+        <select id="cover-identity" name="identity">
+          <option value="worker">회사원</option>
+          <option value="student">대학생</option>
+          <option value="doctor">의사</option>
+        </select>
+      </div>
+
+      <!-- 3. 초기 선택 (selected) -->
+      <div class="form-group">
+        <label for="vehicle">3. 이동 수단 요청</label>
+        <select id="vehicle" name="vehicle">
+          <option value="taxi">일반 택시</option>
+          <option value="bicycle">자전거</option>
+          <option value="armored-car" selected>방탄 스포츠카</option>
+          <option value="helicopter">헬리콥터</option>
+        </select>
+      </div>
+
+      <!-- 4. 다중 선택 (multiple, size="3") -->
+      <div class="form-group">
+        <label for="gadgets">4. 특수 비밀 장비 선택 (다중 선택 가능)</label>
+        <p class="help-text">* Ctrl 키(Mac은 Cmd 키)를 누른 채 클릭하여 복수 선택하세요.</p>
+        <select id="gadgets" name="gadgets" multiple size="3">
+          <option value="laser-watch">레이저 시계</option>
+          <option value="stealth-umbrella">투명 우산</option>
+          <option value="sleep-gas">수면 가스</option>
+          <option value="hacking-usb">만능 해킹 USB</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn">REQUEST EQUIPMENT</button>
+    </form>
+  </div>
+
+</body>
+</html>

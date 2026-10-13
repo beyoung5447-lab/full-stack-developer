@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/* 속성 처리
+선택자(속성:속성값)
+속성값 설정시, 크기 단위
+css에서 사용하는 표준 단위 알아보기
+예를 들어 글자 크기를 front-size: 3em;이라고 작성하면 
+현재 기본 글자 크기보다 3배 커집니다
+%
+front-size:500%라고 작성하면 현재 기본 글자 크기의 5배가 됩니다
+px
+예를 들어 front-size:10px; 이라고 작성하면 화면의 작은 점 10개의
+크기인 10 픽셀로 고정 됩니다.(절대적 크기)*/
+  </style>
+</head>
+<body>
+    <p>이 글자 기본 포트 크기입니다</p>
+    <p style="front-size:3em">이 글자는 기본 크기의 3배 </p>
+    <p style="front-size:300%">이 글자는 기본 크기의 5배 </p>
+    <p style="front-size:10px">이 글자는 10px로 고정된 절대적 크기 </p>
+    /* h2 태그로 오늘도 좋은 날 이라는 타이틀을 지저한 다음 2배 300% 20px
+    글자의 크기 지정*/
+    <style>
+    /* 1. 기본 크기의 2배 (em 사용) */
+    .size-2em {
+      font-size: 2em;
+    }
+
+    /* 2. 기본 크기의 300% (% 사용) */
+    .size-300pct {
+      font-size: 300%;
+    }
+
+    /* 3. 20px 고정 크기 (px 사용) */
+    .size-20px {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 인라인 스타일 방식 -->
+  <h2>인라인 스타일 지정</h2>
+  <h2 style="font-size: 2em;">오늘도 좋은 날 (2배)</h2>
+  <h2 style="font-size: 300%;">오늘도 좋은 날 (300%)</h2>
+  <h2 style="font-size: 20px;">오늘도 좋은 날 (20px)</h2>
+
+  <hr>
+
+  <!-- 내부 스타일 시트(클래스) 방식 -->
+  <h2>클래스 지정 방식</h2>
+  <h2 class="size-2em">오늘도 좋은 날 (2em)</h2>
+  <h2 class="size-300pct">오늘도 좋은 날 (300%)</h2>
+  <h2 class="size-20px">오늘도 좋은 날 (20px)</h2>
+
+</body>
+</html>

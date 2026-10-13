@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전체 선택자와 속성 선택자</title>
+    <style>
+    /*
+      # 전체선택자와 속성 선택자
+
+      1) 전체 선택자 (*)
+         와일드카드(*) 문자를 사용하여 페이지의 모든 태그에 일괄 적용합니다.
+         ex) * { color: navy; }
+
+      2) 속성 선택자
+         - [속성=속성값] : 태그 종류 상관없이 해당 속성을 가진 요소 선택
+           ex) [type=text] { background-color: blanchedalmond; }
+         - 태그[속성=속성값] : 특정 태그 중 해당 속성을 가진 요소만 선택
+           ex) h1[align=center] { background-color: aquamarine; }
+           ex) h2[align=center] { background-color: orange; }
+           ex) input[type=button] { background-color: pink; }
+    */
+
+    /* 1. 전체 선택자: 모든 요소의 글자 색상을 navy로 설정 */
+    * {
+        color: navy;
+    } 
+
+    /* 2. 기존 코드 속성 선택자 */
+    h1[align=center] {
+        background-color: aquamarine;
+    }
+
+    [type=text] {
+        background-color: blanchedalmond;
+    }
+
+    /* 3. 미션 1: type 속성이 button인 input 태그의 배경색을 pink로 설정 */
+    input[type="button"] {
+        background-color: pink;
+        border: 1px solid #ccc;
+        padding: 6px 12px;
+        cursor: pointer;
+    }
+
+    /* 4. 미션 2: h2 태그 중 align 속성값이 center인 경우에만 배경색을 orange로 설정 */
+    h2[align="center"] {
+        background-color: orange;
+    }
+    </style>
+</head>
+<body>
+
+    <!-- 기존 입력 폼 코드 -->
+    <h1 align="center">안녕하세요 (aquamarine 배경)</h1>
+    <h1 align="left">안녕하세요 (기본 배경)</h1>
+    
+    아이디: <input type="text" value="himan"><br>
+    패스워드: <input type="password" value="7777"><br>
+
+    <hr>
+
+    <!-- 통합된 미션 1: 버튼 태그 -->
+    <input type="button" value="클릭 클릭"><br><br>
+
+    <!-- 통합된 미션 2: align 속성이 각각 left, right, center인 h2 태그 3개 -->
+    <h2 align="left">왼쪽 정렬 h2</h2>
+    <h2 align="right">오른쪽 정렬 h2</h2>
+    <h2 align="center">중앙 정렬 h2 (orange 배경 적용)</h2>
+
+</body>
+</html>

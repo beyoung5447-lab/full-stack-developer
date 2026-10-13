@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+"<a>"태그의 target 속성
+    <a heref="02_second/06_target.html" target="_blank">target 속성</a>
+    _blank : 새창에서 열기
+    _self : 현재창에서 열기(기본값)
+    _parent : 부모창에서 열기
+    만약 상위 프레임이 존재하지 않으면 _self와 동일하게 동작
+    inframe이나 팝업 창이 로딩 되었을때 확인 가능
+    _top : 최상위창에서 열기    
+프레임 이름
+inframe 태그의 name 속성에 지정한 이름을 target 속성에 지정하면 해당 프레임에서 열림
+    <iframe src="02_second/06_target.html" name="info"></iframe>
+    <a heref="02_second/06_target.html" target="info">target 속성</a>
+ inframe이 로딩 되었을때 확인 가능
+웹 브라우저 전체 구조 (target 옵션에 따른)
+1단계 최상위 윈도우: 08_index.html("targert = _top" 적용 영역 하위에 있는 html 파일에서 호출)
+2단계 부모 윈도우: (09_parent" 적용 영역 하위에 있는 html 파일에서 호출)
+3단계 자식 윈도우: (10_child" 적용 영역 하위에 있는 html 파일에서 호출)
+    클릭1: traget="_self" 3단계 페이지가 교체
+    클릭2: target "_parent" 2단계 페이지가 교체
+    클릭3: target "_top" 1단계 페이지가 교체
+    클릭4: target="_blank" 새로운 브라우저를 로딩
+최하위에 테스트 할 페이지
+11_result_blank.html : target="_blank" 적용 영역 하위에 있는 html 파일에서 호출
+12_result_self.html : target="_self" 적용 영역 하위에 있는 html 파일에서 호출
+13_result_parent.html : target="_parent" 적용 영역 하위에 있는 html 파일에서 호출
+14_result_top.html : target="_top" 적용 영역 하위에 있는 html 파일에서 호출
+-->
+<body>
+    
+</body>
+</html>

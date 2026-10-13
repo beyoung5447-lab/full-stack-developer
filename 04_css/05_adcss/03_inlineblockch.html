@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*inlineblock 속성 정의
+인라인의 속성인 줄바꿈이 일어나지 않는 성질과, 블록의 속성인 너비와 높이를 가지는 성질을 CSS로 함께 설정하여 처리하는 것을 말합니다.
+속성 설정 방법
+태그 { display: inline-block; }
+주요 특성
+
+1) 새로운 라인에서 시작하지 않으며, 라인 안에 인라인 속성으로 포함됩니다.
+2) 모든 박스 내부에 배치할 수 있습니다.
+3) 옆에 다른 요소를 나란히 배치할 수 있습니다.
+4) width(너비)와 height(높이) 크기 조절이 가능합니다.
+5) padding(안쪽 여백), border(테두리), margin(바깥쪽 여백)을 자유롭게 조절할 수 있습니다.*/
+div h2{
+    display: inline-block;
+    border:1px solid blue;
+    width: 100px; height:50px;
+}
+
+/* div span 과일 리스트 inline-block 속성 처리 */
+div span{
+    display: inline-block;
+    border:1px solid blue;
+    width: 100px; height:50px;
+}
+    </style>
+    <script>
+        /* Head JS 작성 (미리 불러올 스크립트) */
+    </script>
+</head>
+<body>
+    <!-- HTML 작성 -->
+    <h2>line-block 속성 처리</h2>
+    <div>
+        <h2>컴퓨터</h2>
+        <h2>노트북</h2>
+        <h2>백북</h2>
+    </div>
+
+    <!-- div span으로 과일명 나열 및 inline-block 적용 -->
+    <div>
+        <span>사과</span>
+        <span>바나나</span>
+        <span>포도</span>
+    </div>
+
+    <script>
+        /* Body End JS 작성 (마지막에 실행될 스크립트) */
+    </script>
+</body>
+</html>

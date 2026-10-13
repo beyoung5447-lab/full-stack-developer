@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS 작성 */
+        td {
+            text-align: center;
+        }
+        /* tr 밑 첫번째 요소는 중앙정렬, tr 밑 두번째는 요소는
+          왼쪽 정렬 tr 밑 세번째 요소는와 네번째요소는 오른쪽 정렬*/
+        
+        .buyList td, .buyList th{
+            padding: 5px;
+        }
+        .buyList td:nth-child(1){text-align: center;}
+        .buyList td:nth-child(2){text-align: left;}
+        .buyList td:nth-child(3){text-align: right;}
+        .buyList td:nth-child(4){text-align: right;}
+
+        
+
+        /*짝수 번째 행 배경 색상 설정*/
+        tr:nth-child(even) {
+            background-color: aliceblue;
+        }
+        .buyList tr:nth-child(odd){
+            background-color: antiquewhite;
+        }
+
+
+        tr:hover {
+            background-color: navy;
+            color: beige
+        }
+        .buyList tr:hover{
+            background-color: brown;
+            color: beige;
+        }
+
+
+        tr:active {
+            font-weight: bolder;
+        }
+        .buyList tr:active{
+            font-weight: lighter;
+            font-family: 궁서체;
+        }
+        .buyList{
+            border-collapse: collapse;
+            border: 1px solid blue;
+        }
+
+
+
+        /*클릭했을 때, 강조*/
+        /* ex) 아래 물건 정보 테이블(.buyList)를 
+        행단위(odd) 색상, 커서위치, 클릭시 css 설정 처리하세요..
+        
+        .buyList tr
+        .buyList td
+
+        */
+        
+    </style>
+</head>
+
+<body>
+    <table class="buyList" width="80%" align="center" border>
+        <tr>
+            <th>no</th>
+            <th>물건명</th>
+            <th>가격</th>
+            <th>갯수</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>하루견과 하루 믹스너트</td>
+            <td>15,000원</td>
+            <td>3개</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>검은콩 및 곡물 두유 팩</td>
+            <td>18,500원</td>
+            <td>2개</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>신선한 제철 딸기 (대용량)</td>
+            <td>22,000원</td>
+            <td>1개</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>프리미엄 구운 아몬드</td>
+            <td>12,000원</td>
+            <td>2개</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>캘리포니아 호두</td>
+            <td>14,000원</td>
+            <td>1개</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>로스티드 마카다미아</td>
+            <td>16,500원</td>
+            <td>1개</td>
+        </tr>
+    </table>
+
+
+    <!-- HTML 작성  : 코드 자동 정리(shift+alt+f)-->
+    <h2>테이블 색상</h2>
+    <table width="50%" border>
+        <tr>
+            <th>이름</th>
+            <th>html</th>
+            <th>css</th>
+        </tr>
+        <tr>
+            <td>김철수</td>
+            <td>85</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>이영희</td>
+            <td>92</td>
+            <td>88</td>
+        </tr>
+        <tr>
+            <td>박민수</td>
+            <td>78</td>
+            <td>85</td>
+        </tr>
+        <tr>
+            <td>최지윤</td>
+            <td>95</td>
+            <td>92</td>
+        </tr>
+        <tr>
+            <td>정은지</td>
+            <td>88</td>
+            <td>75</td>
+        </tr>
+        <tr>
+            <td>강호동</td>
+            <td>60</td>
+            <td>65</td>
+        </tr>
+        <tr>
+            <td>유재석</td>
+            <td>99</td>
+            <td>98</td>
+        </tr>
+        <tr>
+            <td>송지효</td>
+            <td>82</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>하동훈</td>
+            <td>70</td>
+            <td>72</td>
+        </tr>
+        <tr>
+            <td>전소민</td>
+            <td>89</td>
+            <td>91</td>
+        </tr>
+        <tr>
+            <td>이광수</td>
+            <td>75</td>
+            <td>78</td>
+        </tr>
+        <tr>
+            <td>양세찬</td>
+            <td>81</td>
+            <td>84</td>
+        </tr>
+        <tr>
+            <td>조세호</td>
+            <td>76</td>
+            <td>70</td>
+        </tr>
+        <tr>
+            <td>김종국</td>
+            <td>90</td>
+            <td>89</td>
+        </tr>
+    </table>
+</body>
+
+</html>

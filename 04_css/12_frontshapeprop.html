@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폰트 스타일 설정</title>
+    <style>
+/*
+[폰트 스타일 속성 정리]
+
+1. font-family : 폰트 서체 지정
+   - 예: p { font-family: Arial, sans-serif; }
+   - 첫 번째 폰트가 없을 경우 두 번째 대체 폰트를 적용합니다.
+
+2. font-style : 폰트의 기울임 설정
+   - normal : 기본
+   - italic, oblique : 기울임체
+
+3. font-weight : 폰트 굵기 지정
+   - normal, bold, bolder, lighter
+   - 숫자 지정: 100(매우 얇음) ~ 900(매우 굵음) / 700은 bold와 동일
+
+4. font-size : 폰트 크기 지정
+   - px, em, %, pt, small, x-large 등
+
+5. font (축약 속성)
+   - style, weight, size, family 순으로 한 줄에 통합 작성
+   - 예: font: italic bold 20px consolas, sans-serif;
+*/
+    </style>
+</head>
+<body>
+
+    <h2>폰트 설정</h2>
+
+    <h3>1. font-weight (글자 굵기): 100~900 범위 지정</h3>
+    <p style="font-weight: 900;">font-weight: 900; 설정 (매우 굵게)</p>
+    <p style="font-weight: 100;">font-weight: 100; 설정 (매우 얇게)</p>
+
+    <h3>2. font-style (글자 스타일): 기울임꼴 처리</h3>
+    <p style="font-style: italic;">font-style: italic; 설정</p>
+    <p style="font-style: oblique;">font-style: oblique; 설정</p>
+
+    <h3>3. font 축약 속성 (style, weight, size, family 한 번에 지정)</h3>
+    <p style="font: italic bold 16px sans-serif;">font: 축약 속성 설정</p>
+
+    <h2> 1급 비밀 마법 주문서 </h2>
+  <hr>
+
+  <!-- 1번 조건: font-weight, font-size, font-family (속성 3개) -->
+  <p style="font-weight: 800; font-size: 2em; font-family: '궁서체', Gungsuh, serif;">
+    윙가르디움 레비오사!
+  </p>
+
+  <!-- 2번 조건: font-style, font-weight (속성 2개) -->
+  <p style="font-style: italic; font-weight: 300;">
+    지팡이를 가볍게 휙 휘두르며 튕깁니다.
+  </p>
+
+  <!-- 3번 조건: font 단축 속성 1개 (순서: style weight size family) -->
+  <p style="font: oblique bold 24px '돋움체', sans-serif;">
+    경고: 머글(마법을 모르는 사람) 앞에서는 사용 금지!
+  </p>
+
+</body>
+</html>

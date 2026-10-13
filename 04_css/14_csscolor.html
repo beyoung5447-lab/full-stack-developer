@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 색상 표현 방법</title>
+    <style>
+        /* 
+        # CSS3의 색 표현법
+        
+        웹 화면에서는 색상을 아래와 같이 3가지 방법으로 표현합니다.
+        
+        1) 16진수 코드로 표현: #8A2BE2
+           - 8A : 빨강색(R)
+           - 2B : 초록색(G)
+           - E2 : 파랑색(B)
+           RGB 혼합의 정도로 결국 보라색(blueviolet)으로 표현하는 방법입니다.
+
+        2) 10진수 코드와 rgb()로 표현: rgb(138, 43, 226)
+           - 138 : 빨강색(R)
+           - 43  : 초록색(G)
+           - 226 : 파랑색(B)
+           10진수로 혼합하여 보라색(blueviolet)으로 표현하는 방법입니다.
+
+        3) 색이름으로 표현: blueviolet
+           CSS3 표준에서는 140개 색의 이름을 정하고 있어서 해당 이름으로 표현할 수 있습니다.
+        */
+
+        /* 글자색 설정 */
+        div.cls01 { color: #8A2BE2; }
+        div.cls02 { color: rgb(138, 43, 226); }
+        div.cls03 { color: blueviolet; }
+
+        /* 공통 스타일 (보기 쉽게 패딩과 간격 추가) */
+        div {
+            padding: 8px;
+            margin: 4px 0;
+            font-weight: bold;
+        }
+
+        /* cls04 ~ cls08 배경색 박스 공통 글자색 설정 */
+        div[class^="cls0"] {
+            color: white;
+        }
+    </style>
+    <script>
+        /* Head JS 작성 (미리 불러올 스크립트) */
+    </script>
+</head>
+<body>
+    <!-- HTML 작성 -->
+    <h2>색상 3가지 표현 방법 (글자색)</h2>
+    <div class="cls01">#8A2BE2</div>
+    <div class="cls02">rgb(138,43,226)</div>
+    <div class="cls03">blueviolet</div>
+
+    <hr>
+
+    <h2>인라인 스타일 배경색상 지정 (cls04 ~ cls08)</h2>
+    <!-- 1. deepskyblue -->
+    <div class="cls04" style="background-color: deepskyblue;">cls04 - deepskyblue</div>
+    
+    <!-- 2. brown -->
+    <div class="cls05" style="background-color: brown;">cls05 - brown</div>
+    
+    <!-- 3. fuchsia -->
+    <div class="cls06" style="background-color: fuchsia;">cls06 - fuchsia</div>
+    
+    <!-- 4. #b86 (16진수 축약형 #bb8866) -->
+    <div class="cls07" style="background-color: #b86;">cls07 - #b86</div>
+    
+    <!-- 5. #6b8e23 (16진수 올리브 그린 계열) -->
+    <div class="cls08" style="background-color: #6b8e23;">cls08 - #6b8e23</div>
+
+    <script>
+        /* Body End JS 작성 (마지막에 실행될 스크립트) */
+    </script>
+</body>
+</html>

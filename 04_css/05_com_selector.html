@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>직계 자식 선택자 연습</title>
+    <style>
+        /* 
+           div 태그 바로 아래에 있는 직계 자식 p 태그만 파란색 글자로 지정 
+           (중간에 다른 태그로 감싸진 p 태그는 적용되지 않음)
+        */
+        div > p {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>직계 자식 선택자(div > p) 테스트</h2>
+
+    <div>
+        <p>1. div의 직계 p 태그입니다. (파란색 적용 O)</p>
+        <p>2. div의 직계 p 태그입니다. (파란색 적용 O)</p>
+
+        <section>
+            <p>3. section 안으로 들어간 p 태그입니다. (파란색 적용 X)</p>
+        </section>
+
+        <article>
+            <p>4. article 안으로 들어간 p 태그입니다. (파란색 적용 X)</p>
+        </article>
+    </div>
+
+</body>
+</html>

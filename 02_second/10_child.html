@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자식 윈도우(Child)</title>
+</head>
+<body>
+    <h2>child(자식 윈도우) - target 별로 확인해보기</h2>
+    
+    <!-- _blank : 완전히 새로운 탭이나 창이 열림 -->
+    <a href="16_newWin.html" target="_blank">1. 새로운 윈도우(_blank)</a><br><br>
+
+    <!-- _self : child 영역 안에서 새로운 페이지로 바뀜 -->
+    <a href="17_changePage.html" target="_self">2. 현재 윈도우(_self)</a><br><br>
+
+    <!-- _parent : parent 영역 전체가 새로운 페이지로 바뀜 -->
+    <a href="17_changePage.html" target="_parent">3. 부모 윈도우(_parent)</a><br><br>
+
+    <!-- _top : 최상위 전체 화면(top)이 새로운 페이지로 바뀜 -->
+    <a href="17_changePage.html" target="_top">4. 최상위 윈도우(_top)</a>
+    <!--
+
+    15_blank_top.html
+        새로운 창로딩 ==> 16_newWin.html  새로운창로딩 성공(표시)
+        다른창 대체 ==> 17_changePage.html  페이지변경 성공(표시)
+parent 화면에서 이 페이지 포함하는 바로
+상위 페이지를 로딩하는 옵션 -->
+<!-- 자식 페이지(10_child.html 등) 내부에서 작성 -->
+<a href="17_changePage.html" target="_parent">부모 창 페이지 변경</a>
+<!-- top 여기서 영역 전체 브라우저 전체가 지정된 페이지로 바뀜-->
+ <a href="17_changePage.html" target="_top">최상위 브라우저 전체 변경</a>
+ <!--
+ 각각 계층구조로 iframe으로 해당 페이지를 포함하게 처리한 후
+ 18_top.html
+19__parent.html
+20_child.html
+부모 페이지로 변경 ==> 21_parent.htm h2 부모페이지로 변경 성공후
+최상위 페이지로 변경 ==> 22_top.html h2 최상위 페이지로 변경 성공
+
+ 
+ 
+ 
+ -->
+</body>
+</html>

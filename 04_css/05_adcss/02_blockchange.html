@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS 작성 */
+        span {border:1px solid blue;}
+        .chblock {display:block; width:100px; height:100px;}
+        
+        /* class magicbread span으로 빵의 종류 대왕식빵, 초코케이크를 설정
+           넓이와 폭이 설정되게 하여 해당 빵을 출력 되게 처리 */
+        .magicbread {
+            display: inline-block;
+            width: 150px;
+            height: 100px;
+            background-color: #fce4ec;
+            text-align: center;
+            line-height: 100px;
+            margin: 5px;
+        }
+    </style>
+    <script>
+        /* Head JS 작성 (미리 불러올 스크립트) */
+    </script>
+</head>
+<body>
+    <!-- HTML 작성 -->
+    <h2>inline 태그</h2>
+    <span>사과 </span><span>바나나</span><span>딸기</span><br>
+    <span class="chblock">사과</span><span class="chblock">바나나</span>
+    <span class="chblock">딸기</span>
+    
+    <br><br>
+    <h2>Magic Bread 출력</h2>
+    <span class="magicbread">대왕식빵</span>
+    <span class="magicbread">초코케이크</span>
+
+    <script>
+        /* Body End JS 작성 (마지막에 실행될 스크립트) */
+    </script>
+</body>
+</html>

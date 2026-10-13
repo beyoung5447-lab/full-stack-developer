@@ -1,0 +1,20 @@
+   <h2>성적등록</h2>
+    <form name="fo2" method="get" >
+       이 름 : <input type="text" name="name" value=""/><br>
+       국어점수 : <input type="number" name="kor" value=""/><br>
+       <input type="submit" value="등록"/>
+    </form>
+    <!-- /regPoint 로  이름과 국어를 전송
+        /regPoint?name=홍길동&kor=70
+    http://localhost:5000/receive?st_name=홍길동&kor_score=70
+    -->
+    <h2>성적등록2</h2>
+    <form name="fo2" method="get" action="http://127.0.0.1:5000/receive" >
+       이 름 : <input type="text" name="st_name" value=""/><br>
+       국어점수 : <input type="number" name="kor_score" value=""/><br>
+       <input type="submit" value="등록"/>
+    </form>
+
+</body>
+</html>
+03_formBasic.html

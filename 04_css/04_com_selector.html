@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자 조합하기</title>
+    <style>
+        /*
+          # CSS 선택자 조합하기
+          
+          1) 자식 선택자 (부모 > 자식)
+             부모 바로 아래에 있는 '직계 자식' 태그만 선택합니다.
+             중간에 다른 태그가 껴있으면 적용되지 않습니다.
+             
+          2) 자손 선택자 (조상 하위자손)
+             상위 조상 아래에 포함되어 있는 모든 하위 태그를 선택합니다.
+        */
+
+        /* div 바로 밑에 있는 직계 h1 태그에만 주황색 적용 */
+        div > h1 {
+            color: darkorange;
+        }/*
+        */
+
+        /* div 바로 밑에 있는 직계 strong 태그 */
+        div > strong {
+            background-color: gold;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* ul 안에 있는 모든 strong 태그 (자손 선택자) */
+        ul strong {
+            color: crimson;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>1. 부모 > 자식 관계 예시 (div > h1)</h2>
+
+    <div>
+        <h1>전설의 검 (대장간 직계 - 주황색 적용 O)</h1>
+        <p>공격력 + 100의 검</p>
+
+        <h1>마법의 지팡이 (대장간 직계 - 주황색 적용 O)</h1>
+        <p>마력 +50의 지팡이</p>
+
+        <section>
+            <!-- section 태그로 한 단계 감싸졌으므로 div의 직계 자식이 아니어서 주황색이 적용되지 않습니다. -->
+            <h1>적용이 되지 않는 경우 (section 내부 - 적용 X)</h1>
+        </section>
+    </div>
+
+</body>
+</html>

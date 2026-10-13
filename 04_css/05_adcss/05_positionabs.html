@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        절대위치지정
+        브라우저 화면을 기준으로 절대적 위치를 지정하는것을 말합니다
+        상대적 위치는 옆에나 주위에 다른 요소 객체를 기준으로 설정 한다면
+        절대적 위치는 전체 브라우저를 기준으로 설정합니다
+        기본 형식
+        선택자{position:absolute;위치지정옵션(left/right,top,bottom):크기 설정;} */
+        div{
+            display: inline-block;
+            position: absolute;
+            background-color: orange;
+            width:20%; height:30px;
+            border:1px solid green;
+        }
+        .div01{
+            right:10px; bottom:10px;
+        }
+        .div02{
+            left:30px;
+            background-color: orange;
+        }
+
+        /* direction 클래스 및 dir01 ~ dir04 설정 */
+        .direction {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 20px;
+            background-color: #fff;
+        }
+        .dir01 { top: 100px; left: 50px; }
+        .dir02 { top: 100px; left: 80px; }
+        .dir03 { top: 130px; left: 50px; }
+        .dir04 { top: 130px; left: 80px; }
+    </style>
+    <script>
+        /* Head JS 작성 (미리 불러올 스크립트) */
+    </script>
+</head>
+<body>
+    <!-- HTML 작성 -->
+    <div class="div01">절대위치 div01</div>
+    <div class="div02">절대위치 div02</div>
+
+    <!-- 동, 서, 남, 북 방향 지정 엘리먼트 -->
+    <div class="direction dir01">동</div>
+    <div class="direction dir02">서</div>
+    <div class="direction dir03">남</div>
+    <div class="direction dir04">북</div>
+
+    <script>
+        /* Body End JS 작성 (마지막에 실행될 스크립트) */
+    </script>
+</body>
+</html>

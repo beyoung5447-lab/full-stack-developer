@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    /*시맨틱 태그로 구성된 기본 쇼핑몰 메인 페이즈를 하나 생성해 보세요
+    16_shopmain.html 단 주석문으로 각 시맨틱 태그의 의미를 자세히 설명하게 작성/
+	<title>시맨틱 구조 기본 예제</title>
+	<style>
+		:root {
+			--green: #176b55;
+			--green-dark: #104d3e;
+			--ink: #263238;
+			--muted: #61716b;
+			--line: #dce8e1;
+			--mint: #e8f4ee;
+		}
+
+		* { box-sizing: border-box; }
+
+		body {
+			margin: 0;
+			background: #f4f7f3;
+			color: var(--ink);
+			font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+			font-size: 16px;
+			line-height: 1.7;
+		}
+
+		body > header {
+			padding: 3.5rem 1.5rem 3rem;
+			background: linear-gradient(135deg, var(--green-dark), #27866a);
+			color: #fff;
+			text-align: center;
+		}
+
+		body > header h1 {
+			margin: 0;
+			font-size: clamp(2rem, 5vw, 3rem);
+			letter-spacing: -.04em;
+		}
+
+		body > header p { margin: .6rem 0 0; color: #e0f2e9; }
+
+		nav {
+			position: sticky;
+			top: 0;
+			z-index: 1;
+			background: #fff;
+			box-shadow: 0 2px 10px #173c2b12;
+		}
+
+		nav ul {
+			display: flex;
+			justify-content: center;
+			gap: clamp(1rem, 5vw, 3.5rem);
+			margin: 0;
+			padding: .8rem 1rem;
+			list-style: none;
+		}
+
+		a { color: var(--green); font-weight: 700; text-decoration: none; }
+		a:hover, a:focus-visible { color: var(--green-dark); text-decoration: underline; }
+
+		main {
+			width: min(100% - 2rem, 900px);
+			margin: 2.5rem auto;
+		}
+
+		article, main > section {
+			padding: clamp(1.25rem, 4vw, 2.5rem);
+			border: 1px solid var(--line);
+			border-radius: 18px;
+			background: #fff;
+			box-shadow: 0 8px 24px #173c2b0a;
+		}
+
+		article > header { padding-bottom: 1.25rem; border-bottom: 1px solid var(--line); }
+		h2, h3 { line-height: 1.3; }
+		article h2, main > section h2 { margin: 0; color: var(--green-dark); }
+		article > header p { margin: .5rem 0 0; color: var(--muted); font-size: .9rem; }
+		time { font-weight: 700; }
+
+		article > section {
+			margin-top: 1.5rem;
+			padding: 1.25rem 1.5rem;
+			border-left: 4px solid #75b99a;
+			border-radius: 0 12px 12px 0;
+			background: var(--mint);
+		}
+
+		article > section h3, aside h3 { margin: 0 0 .4rem; }
+		article > section p, aside p { margin: 0; }
+		aside { margin-top: 1rem; padding: 1rem 1.5rem; color: var(--muted); }
+		aside h3 { color: var(--green-dark); }
+		main > section { margin-top: 1.5rem; }
+		main > section p { margin-bottom: 0; }
+
+		body > footer {
+			padding: 1.5rem;
+			background: #e8eee9;
+			color: var(--muted);
+			text-align: center;
+		}
+
+		body > footer p { margin: 0; }
+
+		@media (max-width: 520px) {
+			body > header { padding: 2.5rem 1rem; }
+			nav ul { gap: 1.5rem; }
+			main { width: min(100% - 1.25rem, 900px); margin: 1.25rem auto; }
+			article, main > section { border-radius: 14px; }
+		}
+	</style>
+</head>
+<body>
+	<!-- 시맨틱 태그는 콘텐츠의 역할을 명확히 표현합니다.
+			 검색 엔진과 보조 기술이 구조를 이해하기 쉽고,
+			 개발자도 코드를 읽고 유지보수하기 편리합니다. -->
+
+	<!-- 페이지의 머리말: 사이트 제목, 로고, 소개 등을 담습니다. -->
+	<header>
+		<h1>우리 동네 소식</h1>
+		<p>동네의 새로운 소식과 정보를 전합니다.</p>
+	</header>
+
+	<!-- 주요 탐색 링크를 모아 사용자가 원하는 영역으로 이동하게 합니다. -->
+	<nav aria-label="주요 메뉴">
+		<ul>
+			<li><a href="#news">소식</a></li>
+			<li><a href="#events">행사</a></li>
+			<li><a href="#about">소개</a></li>
+		</ul>
+	</nav>
+
+	<!-- 페이지에서 가장 중요한 고유 콘텐츠 영역입니다. -->
+	<main>
+		<!-- 다른 곳에 독립적으로 배포해도 의미가 통하는 콘텐츠입니다. -->
+		<article id="news">
+			<header>
+				<h2>이번 주 동네 소식</h2>
+				<p><time datetime="2025-05-01">2025년 5월 1일</time>에 게시</p>
+			</header>
+
+			<!-- 같은 주제의 콘텐츠를 묶는 구획이며 보통 제목을 포함합니다. -->
+			<section id="events">
+				<h3>주말 행사</h3>
+				<p>토요일 오전 10시에 중앙 공원에서 봄맞이 장터가 열립니다.</p>
+			</section>
+
+			<!-- 주변 콘텐츠와 관련된 보충 정보나 참고 내용을 담습니다. -->
+			<aside>
+				<h3>참여 안내</h3>
+				<p>행사 참여는 무료입니다.</p>
+			</aside>
+		</article>
+
+		<!-- 소개처럼 주제별로 나눈 콘텐츠 구획입니다. -->
+		<section id="about">
+			<h2>소개</h2>
+			<p>지역 주민이 함께 만드는 온라인 소식지입니다.</p>
+		</section>
+	</main>
+
+	<!-- 페이지의 맺음말: 저작권, 연락처 등의 정보를 배치합니다. -->
+	<footer>
+		<p><small>&copy; 2025 우리 동네 소식</small></p>
+	</footer>
+</body>
+</html>

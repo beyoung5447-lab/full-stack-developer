@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 클래스 선택자 연습</title>
+    <style>
+        /*
+            # 선택자(selector) 핵심 정리
+            HTML 태그의 모양을 꾸밀 스타일 시트를 선택하는 기능
+            기본 선택자 3형제:
+            1) 태그명 {}       예) p { color: blue; }
+            2) .클래스명 {}    예) .cls01 { font-size: 15px; }
+            3) #아이디명 {}    예) #id01 { border: 1px solid green; }
+        */
+
+        /* 태그 선택자 */
+        h3 {
+            color: brown;
+            background-color: yellow;
+        }
+
+        /* 클래스 선택자 단일 정의 */
+        .cls01 {
+            border: 1px dashed orange;
+        }
+
+        .cls02 {
+            color: blue;
+            font-weight: bold;
+        }
+
+        /* 새로 선언한 클래스 */
+        .cls03 {
+            color: red; /* 글자 색상 빨간색 */
+        }
+
+        .cls04 {
+            background-color: yellow; /* 배경 색상 노란색 */
+        }
+        /*여러개의 선택지를 통해서 공통된 속성을 지정
+        선택지1, 선택지2, 선택지3(속성:속성값;)*/
+    </style>
+</head>
+<body>
+    <!-- 1. cls03 클래스 적용 (글자색 빨간색) -->
+    <h2 class="cls03">아이언맨 (cls03 적용)</h2>
+
+    <!-- 2. cls04 클래스 적용 (배경색 노란색) -->
+    <h2 class="cls04">아이언맨 (cls04 적용)</h2>
+
+    <!-- 3. cls03과 cls04 동시 적용 (띄어쓰기로 여러 클래스 연결) -->
+    <h2 class="cls03 cls04">아이언맨 (cls03 + cls04 동시 적용)</h2>
+
+    <!-- 일반 h2 태그들 -->
+    <h2>아이언맨</h2>
+    <h2>아이언맨</h2>
+    <h2>아이언맨</h2>
+    <h2>아이언맨</h2>
+
+    <!-- h3 태그 스타일 적용 -->
+    <h3>css 선택자와 속성/속성값 설정</h3>
+    
+    <!-- h4 태그에 cls02 적용 -->
+    <h4 class="cls02">캡틴 아메리카</h4>
+    
+    <h5>헐크</h5>
+    
+    <!-- h6 태그에 cls02 적용 -->
+    <h6 class="cls02">토르</h6>
+</body>
+</html>

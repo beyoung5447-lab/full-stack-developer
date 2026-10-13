@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 테이블 셀병합 처리
+     td의 속성으로 병합 옵션 설정
+     colspan: 가로 방향으로 셀 병합
+     rowspan: 세로 방향으로 셀 병합
+     테이블 병합 순서
+     일단 기본적인 행열을 먼저 만든다. tr td를 활용하여
+     각각 행열 병합시
+     열단위 병합 갯수를 최초 td 속성으로 설정 하고
+     나머지 td는 삭제한다
+     중간에 n*m 행열 병합시
+     n*m개의 td중에 1개인 병합옵션을 설정하고 나머지는 삭제-->
+     <h2>행병합 2개</h2>
+        <table border="1" width="30%" height="100px" align="center">
+            <tr>
+                <td align="center">1행 1열</td>
+                <td align="center">1행 2열</td>
+            </tr>
+            <tr>
+                <td align="center" rowspan="2">2행 1열</td>
+                <td align="center">2행 2열</td>
+            </tr>
+            <tr>
+                <td align="center">3행 2열</td>
+            </tr>
+            <h2>열병합 2개</h2>
+            <table border="1" width="30%" height="100px" align="center">
+                <tr>
+                    <td align="center">1행 1열</td>
+                    <td align="center" colspan="2">1행 2열</td>
+                </tr>
+                <tr>
+                    <td align="center">2행 1열</td>
+                    <td align="center">2행 2열</td>
+                    <td align="center">2행 3열</td>
+                </tr>
+                <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3x3 셀 병합 테이블 예제</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 300px;
+            height: 200px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+        }
+        .merged {
+            background-color: #e6f7ff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>1. 2행 중간부터 열 3개 연속 병합 (colspan="3")</h2>
+    <p>가운데 행 전체(1행 3개 셀)를 하나로 합친 형태입니다.</p>
+    <table>
+        <tr>
+            <td>(1,1)</td>
+            <td>(1,2)</td>
+            <td>(1,3)</td>
+        </tr>
+        <tr>
+            <!-- colspan="3"으로 3개 열을 병합했으므로 이 행에는 td를 1개만 작성합니다. -->
+            <td colspan="3" class="merged">가운데 3개 열 병합</td>
+        </tr>
+        <tr>
+            <td>(3,1)</td>
+            <td>(3,2)</td>
+            <td>(3,3)</td>
+        </tr>
+    </table>
+
+    <h2>2. 2열 중간부터 행 3개 연속 병합 (rowspan="3")</h2>
+    <p>가운데 열 전체(1열 3개 셀)를 하나로 합친 형태입니다.</p>
+    <table>
+        <tr>
+            <td>(1,1)</td>
+            <!-- rowspan="3"으로 3개 행을 병합합니다. -->
+            <td rowspan="3" class="merged">가운데<br>3개 행<br>병합</td>
+            <td>(1,3)</td>
+        </tr>
+        <tr>
+            <td>(2,1)</td>
+            <!-- (2,2) 위치는 위에서 병합되었으므로 작성하지 않습니다. -->
+            <td>(2,3)</td>
+        </tr>
+        <tr>
+            <td>(3,1)</td>
+            <!-- (3,2) 위치는 위에서 병합되었으므로 작성하지 않습니다. -->
+            <td>(3,3)</td>
+        </tr>
+    </table>
+
+    <h2>3. 중간 중심 4개 셀 병합 (colspan="2", rowspan="2")</h2>
+    <p>우측 하단 2×2 영역(총 4개 셀)을 하나로 합친 형태입니다.</p>
+    <table>
+        <tr>
+            <td>(1,1)</td>
+            <td>(1,2)</td>
+            <td>(1,3)</td>
+        </tr>
+        <tr>
+            <td>(2,1)</td>
+            <!-- 2행 2열 위치에서 2x2 영역 병합 -->
+            <td colspan="2" rowspan="2" class="merged">중간~하단<br>2x2 병합</td>
+        </tr>
+        <tr>
+            <td>(3,1)</td>
+            <!-- (3,2)와 (3,3)은 위에서 병합되었으므로 생략합니다. -->
+        </tr>
+    </table>
+<!-- 4*4 테이블 생성 후 중간에 2*2 행렬이 비어 있는 테이블을 생성-->
+ <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4x4 가운데 2x2 병합 테이블</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 400px;
+            height: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        td {
+            border: 1px solid #333;
+            width: 25%;
+            height: 25%;
+        }
+        /* 가운데 병합된 셀에 강조 효과 */
+        .center-merged {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align: center;">4×4 테이블 (중간 2×2 영역 병합)</h2>
+
+    <table>
+        <!-- 1행 -->
+        <tr>
+            <td>(1,1)</td>
+            <td>(1,2)</td>
+            <td>(1,3)</td>
+            <td>(1,4)</td>
+        </tr>
+        <!-- 2행 -->
+        <tr>
+            <td>(2,1)</td>
+            <!-- 가운데 2x2 병합 시작 위치 -->
+            <td colspan="2" rowspan="2" class="center-merged">
+                중간 2×2 영역<br>(비어 있음 / 병합됨)
+            </td>
+            <!-- (2,3)은 병합되어 생략 -->
+            <td>(2,4)</td>
+        </tr>
+        <!-- 3행 -->
+        <tr>
+            <td>(3,1)</td>
+            <!-- (3,2), (3,3)은 위(2행)에서 병합되어 생략 -->
+            <td>(3,4)</td>
+        </tr>
+        <!-- 4행 -->
+        <tr>
+            <td>(4,1)</td>
+            <td>(4,2)</td>
+            <td>(4,3)</td>
+            <td>(4,4)</td>
+        </tr>
+    </table>
+
+</body>
+</html>
+</body>
+</html>
+</body>
+</html>

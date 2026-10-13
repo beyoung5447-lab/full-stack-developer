@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* active: 요소를 마우스로 누르고 있는 동안 스타일이 적용됩니다 
+    o1 하위에 li를 선언하여 과일명리스트를 처리 후 위 active css 적용하여
+    글자크기 20pt, 배경색상 pink로 처리*/
+    h3:active {
+        font-size: 20px;
+        background-color: red;
+    }
+    </style>
+    <style>
+    /* ol 하위의 li 요소를 마우스로 누르고 있는 동안 스타일 적용 */
+    ol > li:active {
+        font-size: 20pt;
+        background-color: pink;
+    }
+
+    /* 클릭하기 편하도록 간격과 커서 모양 추가 (선택 사항) */
+    li {
+        cursor: pointer;
+        padding: 5px;
+    }
+    </style>
+</head>
+<body>
+
+    <ol>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>딸기</li>
+        <li>포도</li>
+        <li>오렌지</li>
+    </ol>
+</head>
+<body>
+    <h3>안녕하세요</h3>
+    <h3>안녕하세요</h3>
+    <h3>안녕하세요</h3>
+    <h3>안녕하세요</h3>
+    <h3>안녕하세요</h3>
+</body>
+</html>
