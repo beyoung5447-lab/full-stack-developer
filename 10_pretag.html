@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pre 태그와 일반 태그 비교</title>
+</head>
+<body>
+<!--
+html 코드를 구현하다 보면 특정한 경우에 줄을 바꾸거나 공백을 특정 포맷으로 
+처리해야 하는 경우가 있다.
+이때 문서 작업과 동일하게 줄바꿈이나 공백 내용이 그대로 적용되어 처리 되도록 하는
+경우가 필요한데 이때 사용하는 태그가 pre 태그이다
+이 pre 태그는 문서 작업과 동일하게 처리해 주나 다른 태그와의 호환이나 복잡도가
+높아질수록 가독성이 떨어져 많이 활용되지는 않지만 간단하게 화면에 서식 그대로
+내용을 나타낼때 사용된다.
+기본형식 
+----html
+ <pre>
+    공백 간격, 줄바꿈 처리할 내용, 그대로 적용할 내용
+ </pre>
+-->    
+    <h3>개발자의 포맷 그대로 출력하기 (&lt;pre&gt; 태그)</h3>
+    <hr>
+    <pre>
+    여기서는 줄바꾸기, 내용 처리등
+    입력한 그대로 화면에
+    출력이 됩니다. pre
+    </pre>
+
+    <h3>태그로 출력 (&lt;p&gt;, &lt;br&gt;, &amp;nbsp; 태그)</h3>
+    <hr>
+    <p>
+        여기서는 &nbsp;&nbsp;&nbsp;줄바꾸기, &nbsp;&nbsp;&nbsp;내용 처리 등<br>
+        태그를 사용하여 처리하여 <br>
+        출력합니다.
+    </p>
+
+    <!-- 간디의 명언 예제 추가 -->
+    <h3>간디의 명언 - &lt;p&gt; 태그로 출력</h3>
+    <hr>
+    <p>
+        네&nbsp;믿음은&nbsp;네&nbsp;생각이&nbsp;된다.<br>
+        네&nbsp;생각은&nbsp;네&nbsp;말이&nbsp;된다.<br>
+        네&nbsp;말은&nbsp;네&nbsp;행동이&nbsp;된다&nbsp;&nbsp;&nbsp;네&nbsp;행동은&nbsp;네&nbsp;습관이&nbsp;된다.<br>
+        네&nbsp;습관은&nbsp;네&nbsp;가치가&nbsp;된다.<br>
+        네&nbsp;가치는&nbsp;네&nbsp;운명이&nbsp;된다.<br>
+        &ndash;&nbsp;간디
+    </p>
+
+    <h3>간디의 명언 - &lt;pre&gt; 태그로 출력</h3>
+    <hr>
+    <pre>
+네 믿음은 네 생각이 된다. 
+네 생각은 네 말이 된다. 
+네 말은 네 행동이 된다 네 행동은 네 습관이 된다. 
+네 습관은 네 가치가 된다. 
+네 가치는 네 운명이 된다 
+– 간디
+    </pre>
+
+</body>
+</html>

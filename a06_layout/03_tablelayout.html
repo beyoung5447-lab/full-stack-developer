@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+          테이블 레이아웃:
+          HTML의 table 요소 없이도 CSS의 display 속성(table, table-row, table-cell 등)을 
+          이용하여 테이블 구조와 동일한 형태로 레이아웃을 구성하는 방법입니다.
+        */
+        
+        .table{
+            display: table;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .row{
+            display: table-row;
+        }
+        .cell{
+            display: table-cell;
+            border: 1px solid #999;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle; /* 상하정렬 */
+            background-color: #f9f9f9;
+        }
+        .header{
+            font-weight: bold;
+            background-color: #ffe4b5;
+        }
+    </style>
+</head>
+<body>
+    <!-- HTML 작성 -->
+    <h2>웹화면 시작</h2>
+    <div class="table">
+        <div class="row header">
+            <div class="cell">번호</div>
+            <div class="cell">이름</div>
+            <div class="cell">메뉴</div>
+        </div>
+        <div class="row">
+            <div class="cell">1</div>
+            <div class="cell">김도시</div>
+            <div class="cell">돈까스 도시락</div>
+        </div>
+        <div class="row">
+            <div class="cell">2</div>
+            <div class="cell">이반찬</div>
+            <div class="cell">치킨마요 덮밥</div>
+        </div>
+    </div>
+    
+    <script>
+        // Body End JS 작성 (마지막에 실행될 스크립트)
+    </script>
+</body>
+</html>

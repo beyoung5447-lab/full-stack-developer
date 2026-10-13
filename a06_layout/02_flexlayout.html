@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+flexlayout
+Flexbox(Flexible Box Layout)는 CSS3에서 도입된 일차원(가로 또는 세로 한 방향) 레이아웃 시스템입니다.
+ 요소들의 정렬이나 크기, 간격 배치를 유연하고 쉽게 처리할 수 있도록 도와줍니다.
+핵심 개념
+Flex Container (플렉스 컨테이너)
+Flexbox를 적용하고 싶은 부모 요소입니다.
+선언
+Flex Item (플렉스 아이템)
+Flex 컨테이너의 직속 자식 요소들이 자동으로 플렉스 아이템으로 처리됩니다.
+컨테이너 속성
+display: flex
+플렉스 컨테이너로 선언
+flex-direction
+주 축 방향 지정
+속성값: row(가로 기본), column(세로), row-reverse(가로 역방향), column-reverse(세로 역방향)
+flex-wrap
+줄바꿈 여부 설정
+속성값: nowrap(기본, 줄바꿈 안 함), wrap(줄바꿈), wrap-reverse(역방향 줄바꿈)
+justify-content
+주 축 방향 정렬
+속성값: flex-start, flex-end, center, space-between, space-around, space-evenly
+align-items
+교차 축 정렬 (아이템이 1줄일 때)
+속성값: stretch, flex-start, flex-end, center, baseline
+align-content
+교차 축 정렬 (아이템이 2줄 이상일 때)
+속성값: stretch, flex-start, flex-end, center, space-between, space-around
+아이템 속성
+flex-grow
+남은 공간을 비율로 확장 (예: 1, 2, 0)
+flex-shrink
+공간 부족 시 줄어드는 비율 (기본값: 1)
+flex-basis
+기본 크기 지정 (auto, 100px, 30%)
+flex
+grow, shrink, basis를 한 번에 쓰는 단축 속성 (예: flex: 1 1 100px)
+align-self
+개별 아이템 정렬 (auto, flex-start, flex-end, center, stretch)
+        */
+
+        /* 과일 영역 Flex Container */
+        .fruit-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+
+        /* 기존 과일 아이템 */
+        .fruit {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-align: center;
+            flex-grow: 1;
+            margin: 0 5px;
+        }
+
+        /* 메뉴바 컨테이너 (Flex Container) */
+        .menu-container {
+            display: flex;                 
+            flex-direction: row;           
+            justify-content: space-around; 
+            align-items: center;           
+            background-color: #333;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        /* 개별 메뉴 항목 (Flex Item) */
+        .menu-item {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            flex-grow: 1;                  
+            text-align: center;
+        }
+
+        .menu-item:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+    </style>
+    <script>
+        /* Head JS 작성 (미리 불러올 스크립트) */
+    </script>
+</head>
+<body>
+    <!-- HTML 작성 -->
+    <h2>flex layout</h2>
+    
+    <!-- 과일 영역 Flex Container 및 아이템 -->
+    <div class="fruit-container">
+        <div class="fruit">사과</div>
+        <div class="fruit">바나나</div>
+        <div class="fruit">딸기</div>
+    </div>
+
+    <!-- 메뉴 항목 선언 및 a 태그 링크 처리된 Flex 레이아웃 영역 -->
+    <nav class="menu-container">
+        <a href="#home" class="menu-item">홈</a>
+        <a href="#service" class="menu-item">서비스</a>
+        <a href="#about" class="menu-item">소개</a>
+        <a href="#contact" class="menu-item">연락처</a>
+    </nav>
+
+    <script>
+        /* Body End JS 작성 (마지막에 실행될 스크립트) */
+    </script>
+</body>
+</html>

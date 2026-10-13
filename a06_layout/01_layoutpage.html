@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        # Layoput 내용
+        1. 레이아웃은 웹페이지의 구조를 정의하는 것으로, 시맨틱 태그를 사용하여 의미 있는 
+        구조를 만들 수 있습니다.
+        2. dislay 속성을 사용하여 요소를 블록, 인라인, 플렉스 등으로 정의할 수 있습니다.
+        3. 추가적인 display flex, grid, table 등을 활용하여 레이아웃을 구성할 수 있습니다.
+
+        # Grid Layout
+        1. grid layout은 2차원 레이아웃을 구성할 수 있는 방법으로, 행과 열을 정의하여 
+        요소를 배치할 수 있습니다.
+        2. 기본 속성
+        - display: grid; : 그리드 컨테이너를 정의합니다.
+        - grid-template-columns: 1fr 1fr; : 열의 크기를 정의합니다. 1fr은 가변적인 크기를 
+           의미합니다.
+        - grid-template-rows: 100px 200px; : 행의 크기를 정의합니다.
+        3. grid-gap: 10px; : 그리드 아이템 간의 간격을 정의합니다.
+        4. grid-area: header; : 그리드 아이템의 영역을 정의합니다.
+        5. grid-template-areas: "header header" "main sidebar" "footer footer"; : 
+           그리드 영역을 정의합니다.
+        */
+        .box-container {
+            display: grid; /* 그리드 컨테이너를 정의합니다. */
+            grid-template-columns: repeat(3, 1fr);
+            /* 열의 크기를 정의합니다. 
+               repeat(3, 1fr)은 3개의 동일한 열을 생성합니다. */
+            gap: 10px;
+            /* 그리드 아이템 간의 간격을 정의합니다. */
+            margin-bottom: 20px;
+        }
+
+        .box {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .prod-container {
+            display: grid;
+            grid-template-columns: 2fr 2fr 1fr;
+            gap: 5px;
+            padding: 20px;
+            background-color: yellowgreen;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* 회원 정보 전용 3행 3열 동일 비율 컨테이너 */
+        .member-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            padding: 20px;
+            background-color: #f39c12;
+            border-radius: 5px;
+        }
+
+        .prod {
+            background-color: white;
+            padding: 12px;
+            text-align: center;
+            border-radius: 3px;
+        }
+
+        .prod.header {
+            background-color: #2c3e50;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        /* Head JS 작성 (미리 불러올 스크립트) */
+    </script>
+</head>
+<body>
+    <!-- HTML 작성 -->
+    <h2>여러가지 그리드 레이아웃</h2>
+    <div class="box-container">
+        <div class="box box1">Box 1</div>
+        <div class="box box2">Box 2</div>
+        <div class="box box3">Box 3</div>
+        <div class="box box4">Box 4</div>
+        <div class="box box5">Box 5</div>
+        <div class="box box6">Box 6</div>
+    </div>
+    
+    <!-- 과일 코드 복구 -->
+    <div class="prod-container">
+        <div class="prod">사과</div>
+        <div class="prod">3000원</div>
+        <div class="prod">2개</div>
+        <div class="prod">배</div>
+        <div class="prod">2000원</div>
+        <div class="prod">3개</div>        
+        <div class="prod">딸기</div>
+        <div class="prod">4000원</div>
+        <div class="prod">5개</div>        
+    </div>
+
+    <!-- 회원 정보 (3행 3열, 동일 비율) 추가 -->
+    <div class="member-container">
+        <div class="prod header">아이디</div>
+        <div class="prod header">회원명</div>
+        <div class="prod header">등급</div>
+        
+        <div class="prod">user01</div>
+        <div class="prod">김철수</div>
+        <div class="prod">VIP</div>
+        
+        <div class="prod">user02</div>
+        <div class="prod">이영희</div>
+        <div class="prod">Gold</div>
+    </div>
+    
+    <script>
+        /* Body End JS 작성 (마지막에 실행될 스크립트) */
+    </script>
+</body>
+</html>
